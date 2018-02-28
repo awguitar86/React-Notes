@@ -43,7 +43,7 @@ var incNumberAction = {
 var decNumberAction = {
   type: 'DECREMENT_NUMBER'
 };
-function reducer(state, action) {
+function reducer(state, action) {   //This is a reducer function in redux
     switch(action.type) {
       case "CHANGE_NAME":
         return {
@@ -64,3 +64,5 @@ function reducer(state, action) {
 }
 var newState = reducer(state, decNumberAction);
 console.log(newState !== state);
+
+

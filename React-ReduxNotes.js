@@ -26,3 +26,4 @@ var newUser = Object.assign({}, oldUser);
 newUser.favorites = {   // When you use Object.assign() it only merges things on the first level. With nested objects you have to go to the first
     food: "broccoli"    // level and then change the object within that first level object.
 }
+

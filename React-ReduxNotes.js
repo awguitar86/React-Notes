@@ -27,3 +27,40 @@ newUser.favorites = {   // When you use Object.assign() it only merges things on
     food: "broccoli"    // level and then change the object within that first level object.
 }
 
+/* REDUX REDUCERS */
+// The reducer is a function that states the state of our application and an action and has to figure out what change should occure.
+var state = {
+    name: "Brett",
+    number: 5
+};
+var action = {
+  type: 'CHANGE_NAME',
+  payload: 'Jeremy'
+};
+var incNumberAction = {
+  type: 'INCREMENT_NUMBER'
+};
+var decNumberAction = {
+  type: 'DECREMENT_NUMBER'
+};
+function reducer(state, action) {
+    switch(action.type) {
+      case "CHANGE_NAME":
+        return {
+          number: state.number,
+          name: action.payload
+        };
+      case 'INCREMENT_NUMBER':
+        return {
+          name: state.name,
+          number: state.number + 1
+        };
+      case 'DECREMENT_NUMBER':
+        return {
+          name: state.name,
+          number: state.number - 1
+        };
+    }
+}
+var newState = reducer(state, decNumberAction);
+console.log(newState !== state);
